@@ -54,10 +54,12 @@ namespace Abner.Common.Utility
         /// <returns>MD5字符串</returns>
         public static string ComputeMd5(string str, Bits bits = Bits.ThirtyTwo)
         {
-            MD5 md5 = MD5.Create();
-            byte[] buffer = Encoding.UTF8.GetBytes(str);
-            byte[] md5Bytes = md5.ComputeHash(buffer);
-            return GetString(md5Bytes, bits);
+            using (MD5 md5 = MD5.Create())
+            {
+                byte[] buffer = Encoding.UTF8.GetBytes(str);
+                byte[] md5Bytes = md5.ComputeHash(buffer);
+                return GetString(md5Bytes, bits);
+            }
         }
 
         /// <summary>
@@ -71,14 +73,17 @@ namespace Abner.Common.Utility
             {
                 throw new FileNotFoundException();
             }
-            MD5 md5 = MD5.Create();
-            byte[] md5Bytes = null;
-            using (FileStream fsRead = new FileStream(file.FullName, FileMode.Open, FileAccess.Read))
+            using (MD5 md5 = MD5.Create())
             {
-                md5Bytes = md5.ComputeHash(fsRead);
+                byte[] md5Bytes = null;
+                using (FileStream fsRead = new FileStream(file.FullName, FileMode.Open, FileAccess.Read))
+                {
+                    md5Bytes = md5.ComputeHash(fsRead);
+                }
+
+                return GetString(md5Bytes, bits);
             }
 
-            return GetString(md5Bytes, bits);
         }
     }
 }
