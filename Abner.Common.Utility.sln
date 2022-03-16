@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abner.Common.Utility", "Abner.Common.Utility\Abner.Common.Utility.csproj", "{4787C1B4-DA6A-4990-AD45-5745F6339088}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abner.Common.Utility.Tests", "Abner.Common.Utility.Tests\Abner.Common.Utility.Tests.csproj", "{4FA913CE-4063-4F14-A72B-3D6A160BA54B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4787C1B4-DA6A-4990-AD45-5745F6339088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4787C1B4-DA6A-4990-AD45-5745F6339088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4787C1B4-DA6A-4990-AD45-5745F6339088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4787C1B4-DA6A-4990-AD45-5745F6339088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA913CE-4063-4F14-A72B-3D6A160BA54B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA913CE-4063-4F14-A72B-3D6A160BA54B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA913CE-4063-4F14-A72B-3D6A160BA54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA913CE-4063-4F14-A72B-3D6A160BA54B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

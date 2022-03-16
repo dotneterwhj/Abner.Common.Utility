@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Abner.Common.Utility</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Abner</Authors>
+		<Company>Abner</Company>
+		<PackageProjectUrl></PackageProjectUrl>
+		<RepositoryUrl></RepositoryUrl>
+		<PackageVersion>1.0.0</PackageVersion>
+		<Description></Description>
+  </PropertyGroup>
+
+</Project>
