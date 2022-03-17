@@ -31,16 +31,38 @@ namespace Abner.Common.Utility
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string EscapeUnicode(string str)
+        public static string UnEscapeUnicode(string str)
         {
-            return Regex.Escape(str);
+            return Regex.Unescape(str);
         }
 
-        public static string ToJsonUnicode<T>(T obj) where T : class, new()
+        /// <summary>
+        /// 转换成Unicode (默认除ASCII之外的字符)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="obj"></param>
+        /// <param name="stringEscapeHandling"></param>
+        /// <returns></returns>
+        public static string ToJsonUnicode<T>(T obj, StringEscapeHandling stringEscapeHandling = StringEscapeHandling.EscapeNonAscii) where T : class
         {
             return JsonConvert.SerializeObject(obj, new JsonSerializerSettings
             {
-                StringEscapeHandling = StringEscapeHandling.EscapeNonAscii
+                StringEscapeHandling = stringEscapeHandling
+            });
+        }
+
+        /// <summary>
+        /// 转换成Unicode (默认除ASCII之外的字符)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="obj"></param>
+        /// <param name="stringEscapeHandling"></param>
+        /// <returns></returns>
+        public static T ToObject<T>(string json, StringEscapeHandling stringEscapeHandling = StringEscapeHandling.EscapeNonAscii) where T : class
+        {
+            return JsonConvert.DeserializeObject<T>(json, new JsonSerializerSettings
+            {
+                StringEscapeHandling = stringEscapeHandling
             });
         }
     }

@@ -11,24 +11,27 @@ namespace Abner.Common.Utility.Tests.EncodingHelper
 {
     public class UnicodeUtilityTest
     {
+        class Person
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+        }
         [Fact]
         public void Unicode()
         {
+            var person = new Person { Name = "你好，earth!\r\n好<p>sda</p>", Age = 20 };
 
-            var a = "你好，earth!\r\n好<p>sda</p>";
-            //            var js = JsonConvert.SerializeObject(a,new JsonSerializerSettings
-            //            {
-            //                StringEscapeHandling = StringEscapeHandling.Default
-            //            });
+            var nameUnicode = UnicodeUtility.ToUnicode(person.Name);
+            var origin = UnicodeUtility.UnEscapeUnicode(nameUnicode);
+            Assert.Equal(person.Name, origin);
 
-            var js = System.Text.Json.JsonSerializer.Serialize(a, new JsonSerializerOptions
-            {
-                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Default
-            });
+            var unicode = UnicodeUtility.ToJsonUnicode(person);
+            var origino = UnicodeUtility.ToObject<Person>(unicode);
+            Assert.Equal(person.Name, origino.Name);
+            Assert.Equal(person.Age, origino.Age);
 
-            var url = "http://www.baidu.com?t%3Dhello";
-
-            var s = Regex.Unescape(js);
+            //var unicode1 = UnicodeUtility.UnEscapeUnicode(unicode);
+            //Assert.Equal(UnicodeUtility.ToJsonUnicode(person, Newtonsoft.Json.StringEscapeHandling.Default), unicode1);
         }
     }
 }
