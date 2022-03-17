@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using Xunit;
 
 namespace Abner.Common.Utility.Tests.HtmlAndUrlHelper
@@ -34,12 +35,15 @@ namespace Abner.Common.Utility.Tests.HtmlAndUrlHelper
         {
             var url = @"https://cn.bing.com/search?q=C#+数字枚举&qs=n&form=QBRE&sp=-1&pq=c#+数字枚举&sc=0-7&sk=&cvid=04847CCD3A1F4BC68F3CF30F13672715";
 
+            var ur = HttpUtility.UrlEncodeUnicode(url);
+
             var url1 = HtmlAndUrlUtility.UrlEncode(url);
             var url2 = HtmlAndUrlUtility.UrlEncode(url1);
             Assert.Equal(url2, HtmlAndUrlUtility.DoubleUrlEncode(url));
 
             Assert.Equal(url, HtmlAndUrlUtility.UrlDecode(url1));
             Assert.Equal(url1, HtmlAndUrlUtility.UrlDecode(url2));
+            Assert.Equal(url, HtmlAndUrlUtility.DoubleUrlDecode(url2));
 
         }
     }

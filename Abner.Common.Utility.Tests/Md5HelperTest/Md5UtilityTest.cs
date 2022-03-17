@@ -1,5 +1,6 @@
-using Xunit;
+﻿using Xunit;
 using System.IO;
+using System.Text;
 
 namespace Abner.Common.Utility.Tests;
 
