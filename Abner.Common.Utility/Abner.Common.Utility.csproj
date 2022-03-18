@@ -6,10 +6,10 @@
 		<Version>1.0.0</Version>
 		<Authors>Abner</Authors>
 		<Company>Abner</Company>
-		<PackageProjectUrl></PackageProjectUrl>
-		<RepositoryUrl></RepositoryUrl>
+		<PackageProjectUrl>https://github.com/dotneterwhj/Abner.Common.Utility</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/dotneterwhj/Abner.Common.Utility</RepositoryUrl>
 		<PackageVersion>1.0.0</PackageVersion>
-		<Description></Description>
+		<Description>收集一些常用的帮助类库</Description>
   </PropertyGroup>
 
   <ItemGroup>
