@@ -12,8 +12,8 @@ namespace Abner.Common.Utility
         /// AES加密
         /// </summary>
         /// <param name="plainText"></param>
-        /// <param name="key"></param>
-        /// <param name="IV"></param>
+        /// <param name="key">32位长度的字符串</param>
+        /// <param name="IV">16位长度的字符串</param>
         /// <returns>返回base64编码后的字符串</returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
@@ -64,8 +64,8 @@ namespace Abner.Common.Utility
         /// AES解密
         /// </summary>
         /// <param name="cipherText">base64编码的字符串</param>
-        /// <param name="key"></param>
-        /// <param name="IV"></param>
+        /// <param name="key">32位长度的字符串</param>
+        /// <param name="IV">16位长度的字符串</param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
